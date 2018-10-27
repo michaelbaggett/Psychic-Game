@@ -24,8 +24,8 @@ document.onkeyup = function(event) {
      } else {
          lose++;
      }
-    //winsText.innerHTML = "Wins: " + win;
-    //lossesText.innerHTML = "Losses: " + lose;
+     console.log("Wins: " + win);
+     console.log("Losses: " + lose);
 
 };
 
