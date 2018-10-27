@@ -16,26 +16,24 @@ console.log(randomLetter);
 
 
 //onkeyup function
+//onkeyup function
 document.onkeyup = function(event) {
     var userGuess = event.key.toUpperCase();
     console.log(userGuess);
     
-        if (userGuess !== randomLetter) {
-            letterGuessed.innerHTML = ("You Guessed: " + userGuess)
-        }
-    
-        // if (userGuess === randomLetter){
-        //     win++;
-        // }else {
-        //     lose++
-        // }
-    };
+     if (userGuess === randomLetter) {
+         win++;
+     } else {
+         lose++;
+     }
 
+    letterGuessed.innerHTML = ("You Guessed: " + userGuess)
     winsText.innerHTML = ("Wins: " + win);
     lossesText.innerHTML = ("Losses: " + lose);
     
 
 };
+}
 
 //win condition
 //loss condition
