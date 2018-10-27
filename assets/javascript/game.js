@@ -1,4 +1,5 @@
-var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+window.onload = function (){
+    var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 var win = 0;
 var lose = 0;
@@ -24,11 +25,13 @@ document.onkeyup = function(event) {
      } else {
          lose++;
      }
-     console.log("Wins: " + win);
-     console.log("Losses: " + lose);
+
+    winsText.innerHTML = ("Wins: " + win);
+    lossesText.innerHTML = ("Losses: " + lose);
+    
 
 };
-
+}
 //win condition
 //loss condition
 
