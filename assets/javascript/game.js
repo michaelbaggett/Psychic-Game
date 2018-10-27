@@ -3,15 +3,19 @@ window.onload = function (){
 
 var win = 0;
 var lose = 0;
-//var guesses = "";
+var guessLog = [];
+var guessLeft = 8;
 function reset(){
     randomLetter = letters[Math.floor(Math.random()*letters.length)];
     console.log(randomLetter);
+    guessLeft = 8;
+    guessLog.length = 0;
 }
 
 var winsText = document.getElementById("wins");
 var lossesText = document.getElementById("losses");
 var letterGuessed = document.getElementById("youguessed");
+var guessAmount = document.getElementById("guesses");
 
 
 //computer generates random letter
@@ -23,19 +27,27 @@ console.log(randomLetter);
 //onkeyup function
 document.onkeyup = function(event) {
     var userGuess = event.key.toUpperCase();
-    console.log(userGuess);
+    //console.log(userGuess);
+    guessLog.push(userGuess);
     
      if (userGuess === randomLetter) {
          win++;
-         reset()
-     } else {
+         alert("You win!");
+         reset();
+     } else if (userGuess !== randomLetter) {
+        guessLeft--;
+     }else if (guessLog === 0) {
          lose++;
          reset();
+     } else if (userGuess !== randomLetter) {
+         guessLeft--;
      }
 
     letterGuessed.innerHTML = ("You Guessed: " + userGuess)
     winsText.innerHTML = ("Wins: " + win);
     lossesText.innerHTML = ("Losses: " + lose);
+    guessAmount.innerHTML = ("You have " + guessLeft + " guesses left")
+
     
 
 };
