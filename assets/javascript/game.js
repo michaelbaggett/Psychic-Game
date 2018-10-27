@@ -1,20 +1,40 @@
-<javascript>
-//array of letters
-//computer generates random letter
+//variables
 
-//wins
-//losses
-//letters guessed
+var win = 0;
+var lose = 0;
+var guesses = "";
+var winsText = document.getElementById("wins");
+var lossesText = document.getElementById("losses");
+var letterGuessed = document.getElementById("youguessed");
+
+//array of letters
+
+var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+//computer generates random letter
+var randomLetter = letters[Math.floor(Math.random()*letters.length)];
+console.log(randomLetter)
+
 
 //onkeyup function
+document.onkeyup = function(event) {
+    var userGuess = event.key;
+    console.log(userGuess);
+    
+//     if (userGuess === randomLetter) {
+//         win++;
+//     } else {
+//         lose++;
+//     }
+//     winsText.innerHTML = "Wins: " + win;
+//     lossesText.innerHTML = "Losses: " + lose;
+
+};
+
+
 
 //compare userguess to computer generated letter
 
 //win condition
 //loss condition
 
-
-
-
-
-</javascript>
