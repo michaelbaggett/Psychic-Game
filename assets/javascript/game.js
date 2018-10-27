@@ -20,18 +20,23 @@ document.onkeyup = function(event) {
     var userGuess = event.key.toUpperCase();
     console.log(userGuess);
     
-     if (userGuess === randomLetter) {
-         win++;
-     } else {
-         lose++;
-     }
+        if (userGuess !== randomLetter) {
+            letterGuessed.innerHTML = ("You Guessed: " + userGuess)
+        }
+    
+        // if (userGuess === randomLetter){
+        //     win++;
+        // }else {
+        //     lose++
+        // }
+    };
 
     winsText.innerHTML = ("Wins: " + win);
     lossesText.innerHTML = ("Losses: " + lose);
     
 
 };
-}
+
 //win condition
 //loss condition
 
