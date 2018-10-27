@@ -34,16 +34,15 @@ document.onkeyup = function(event) {
          win++;
          alert("You win!");
          reset();
-     } else if (userGuess !== randomLetter) {
-        guessLeft--;
-     }else if (guessLog === 0) {
+     } else if (guessLeft === 0) {
          lose++;
+         alert("You lose!");
          reset();
      } else if (userGuess !== randomLetter) {
-         guessLeft--;
+        guessLeft--;
      }
 
-    letterGuessed.innerHTML = ("You Guessed: " + guessLog + " ")
+    letterGuessed.innerHTML = ("You Guessed: " + guessLog)
     winsText.innerHTML = ("Wins: " + win);
     lossesText.innerHTML = ("Losses: " + lose);
     guessAmount.innerHTML = ("You have " + guessLeft + " guesses left")
