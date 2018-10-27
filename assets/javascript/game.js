@@ -43,7 +43,7 @@ document.onkeyup = function(event) {
          guessLeft--;
      }
 
-    letterGuessed.innerHTML = ("You Guessed: " + userGuess)
+    letterGuessed.innerHTML = ("You Guessed: " + guessLog + " ")
     winsText.innerHTML = ("Wins: " + win);
     lossesText.innerHTML = ("Losses: " + lose);
     guessAmount.innerHTML = ("You have " + guessLeft + " guesses left")
