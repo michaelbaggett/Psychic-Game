@@ -4,6 +4,10 @@ window.onload = function (){
 var win = 0;
 var lose = 0;
 //var guesses = "";
+function reset(){
+    randomLetter = letters[Math.floor(Math.random()*letters.length)];
+    console.log(randomLetter);
+}
 
 var winsText = document.getElementById("wins");
 var lossesText = document.getElementById("losses");
@@ -23,8 +27,10 @@ document.onkeyup = function(event) {
     
      if (userGuess === randomLetter) {
          win++;
+         reset()
      } else {
          lose++;
+         reset();
      }
 
     letterGuessed.innerHTML = ("You Guessed: " + userGuess)
